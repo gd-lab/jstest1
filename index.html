@@ -2,41 +2,7 @@
 <html>
 <head>
     <title>Sample JS</title>
+    <script data-main="scripts/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.min.js"></script>
 </head>
-<body>
-
-
-<script>
-    // create 100 buttons
-    var buttonsHtml = '';
-    for (var i = 0; i < 100; i++) {
-        buttonsHtml += '<button></button>';
-    }
-    document.body.innerHTML = buttonsHtml;
-    
-    
-    // iterate over all buttons and..
-    var buttons = document.body.children;
-    for (i = 0, max = buttons.length; i < max; i++) {
-        var num = i + 1;
-        
-        // add a button number to button’s label
-        buttons[i].innerHTML = num;
-        buttons[i].number = num;
-    }
-    
-    // add a click handler which displays a button number via alert
-    document.body.onclick = function(event) {
-        event = event || window.event;
-        var target = event.target || event.srcElement;
-        
-        if (target.nodeName == 'BUTTON' && target.number) {
-            alert(target.number);
-        }
-    };
-    
-</script>
-
-
-</body>
+<body></body>
 </html>
