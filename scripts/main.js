@@ -1,24 +1,10 @@
-define(function (require) {
+define(["./create_buttons"], function (createButtons) {
 
-    // create 100 buttons
-    var buttonsHtml = '';
-    for (var i = 0; i < 100; i++) {
-        buttonsHtml += '<button></button>';
-    }
-    document.body.innerHTML = buttonsHtml;
-
-    // iterate over all buttons and..
-    var buttons = document.body.children;
-    for (i = 0, max = buttons.length; i < max; i++) {
-        var num = i + 1;
-
-        // add a button number to button’s label
-        buttons[i].innerHTML = num;
-        buttons[i].number = num;
-    }
+    var buttonsEl = document.getElementById('buttons');
+    createButtons(buttonsEl, 100);
 
     // add a click handler which displays a button number via alert
-    document.body.onclick = function(event) {
+    buttonsEl.onclick = function(event) {
         event = event || window.event;
         var target = event.target || event.srcElement;
 
